@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPoint Desktop - Lektion 3</title>
+    
+    <!-- Google Fonts - Poppins für gute Lesbarkeit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Eigene CSS-Datei -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="powerpoint-desktop.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Zurück zum Projekt
+        </a>
+        <h1>PowerPoint Desktop - Lektion 3</h1>
+    </header>
+    
+    <!-- Hauptinhalt -->
+    <main class="main-content project-page">
+        <!-- Lektionsbeschreibung -->
+        <section class="project-intro">
+            <h2>Lektion 3: Peer-Feedback & Überarbeitung (45 Min.)</h2>
+            <p class="lesson-goal"><strong>Ziel:</strong> Heute teilst du deine Arbeit und lernst, professionelles Feedback zu geben und zu empfangen.</p>
+        </section>
+        
+        <!-- Fortschrittsanzeige -->
+        <section class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" style="width: 75%;"></div>
+            </div>
+            <div class="progress-text">Lektion 3 von 4</div>
+        </section>
+        
+        <!-- Lektionsinhalt -->
+        <section class="lesson project-lesson">
+            <div class="steps">
+                <h3>Schritt 1: Deine Präsentation zum Teilen vorbereiten 📤</h3>
+                <p>Klicke in deiner PowerPoint-Präsentation auf <span class="highlight-command">"Datei"</span> → <span class="highlight-command">"Teilen"</span>.</p>
+                <p>Wähle <span class="highlight-command">"Online präsentieren"</span> oder <span class="highlight-command">"Per E-Mail senden"</span>, um deine Präsentation zu teilen.</p>
+                <p><strong>ACHTUNG, WICHTIG:</strong> Wenn du eine Datei per E-Mail sendest, stelle sicher, dass du sie als PDF exportierst, damit andere sie nicht ändern können. Gehe dazu auf <span class="highlight-command">"Datei"</span> → <span class="highlight-command">"Exportieren"</span> → <span class="highlight-command">"PDF/XPS-Dokument erstellen"</span>.</p>
+                
+                <h3>Schritt 2: Link mit deinem Partner tauschen 🔄</h3>
+                <p>Deine Lehrkraft teilt dir einen Feedback-Partner zu. Schickt euch gegenseitig per Schul-Chat oder E-Mail den Link zu euren Präsentationen oder die PDF-Datei.</p>
+                
+                <h3>Schritt 3: Das Feedback per E-Mail schreiben ✉️</h3>
+                <p>Öffne die Präsentation deines Partners.</p>
+                <p>Schau sie dir genau an.</p>
+                <p>Öffne dein E-Mail-Programm.</p>
+                <p>Erstelle eine neue E-Mail an die Adresse, die dein Partner auf Folie 6 angegeben hat.</p>
+                <p>Betreff der E-Mail: <span class="highlight-command">Feedback zu deiner Präsentation: Lieblingstier</span></p>
+                <p>Kopiere den folgenden Feedback-Bogen in die E-Mail und fülle ihn ehrlich und respektvoll aus:</p>
+                
+                <div id="feedback-container"></div>
+                
+                <p>Sende die E-Mail ab.</p>
+            </div>
+        </section>
+        
+        <!-- Nächste Lektion -->
+        <section class="lesson-navigation">
+            <div class="nav-buttons">
+                <a href="powerpoint-desktop-lektion2.html" class="prev-lesson-btn">
+                    <i class="fas fa-arrow-left"></i> Vorherige Lektion
+                </a>
+                <a href="powerpoint-desktop-lektion4.html" class="next-lesson-btn">
+                    Nächste Lektion: Finale Version & Abschluss <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Digitale Werkstatt | Matthias-Grünewald-Gymnasium</p>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript für Kopierfunktion -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.setAttribute('data-page-type', 'powerpoint');
+        });
+    </script>
+</body>
+</html>

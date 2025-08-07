@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Online - Lektion 3</title>
+    
+    <!-- Google Fonts - Poppins für gute Lesbarkeit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Eigene CSS-Datei -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="excel-online.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Zurück zum Projekt
+        </a>
+        <h1>Excel Online - Lektion 3</h1>
+    </header>
+    
+    <!-- Hauptinhalt -->
+    <main class="main-content project-page">
+        <!-- Lektionsbeschreibung -->
+        <section class="project-intro">
+            <h2>Lektion 3: Die Formel für Profis (45 Min.)</h2>
+            <p class="lesson-goal"><strong>Ziel:</strong> Heute lernst du eine der mächtigsten Formeln in Excel kennen. Dein Tracker wird lernen, nur die Noten für ein bestimmtes Fach zu mitteln.</p>
+        </section>
+        
+        <!-- Fortschrittsanzeige -->
+        <section class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" style="width: 75%;"></div>
+            </div>
+            <div class="progress-text">Lektion 3 von 4</div>
+        </section>
+        
+        <!-- Lektionsinhalt -->
+        <section class="lesson project-lesson">
+            <div class="steps">
+                <h3>Schritt 1: Die MITTELWERTWENN-Formel verstehen 🧠</h3>
+                <p>Diese Formel braucht drei Informationen (Argumente):</p>
+                <ul>
+                    <li>Wo soll ich nach einer Bedingung suchen? (z.B. in der Fächer-Spalte B)</li>
+                    <li>Was ist die Bedingung? (z.B. das Wort "Mathe")</li>
+                    <li>Welche Werte soll ich dann mitteln? (z.B. die Noten in Spalte D)</li>
+                </ul>
+                <p>Die Formel sieht so aus: <span class="highlight-command">=MITTELWERTWENN(Bereich1; Bedingung; Bereich2)</span></p>
+                
+                <h3>Schritt 2: Die Formel anwenden ✏️</h3>
+                <p>Klicke in deinem Übersichts-Cockpit in die Zelle neben "Mathe" (also F5).</p>
+                <p>Gib exakt diese Formel ein: <span class="highlight-command">=MITTELWERTWENN(B:B; "Mathe"; D:D)</span></p>
+                <ul>
+                    <li><span class="highlight-command">B:B</span> heißt: Durchsuche die ganze Spalte B (Fächer).</li>
+                    <li><span class="highlight-command">"Mathe"</span> ist die Bedingung. Das Wort muss in Anführungszeichen stehen.</li>
+                    <li><span class="highlight-command">D:D</span> heißt: Nimm die entsprechenden Werte aus Spalte D (Noten).</li>
+                </ul>
+                <p>Drücke Enter. Excel zeigt dir nun deinen Mathe-Schnitt an.</p>
+                <p>Wiederhole dies für die anderen Fächer. Passe dabei die Bedingung an:</p>
+                <ul>
+                    <li>Für Deutsch (in Zelle F6): <span class="highlight-command">=MITTELWERTWENN(B:B; "Deutsch"; D:D)</span></li>
+                    <li>Für Englisch (in Zelle F7): <span class="highlight-command">=MITTELWERTWENN(B:B; "Englisch"; D:D)</span></li>
+                </ul>
+                
+                <h3>Schritt 3: Testen und Feedback-Info hinzufügen 🧪</h3>
+                <p>Trage eine neue fiktive Mathe-Note in deine Haupttabelle ein. Beobachte, wie sich dein Mathe-Schnitt und dein Gesamt-Schnitt automatisch ändern!</p>
+                <p>Schreibe irgendwo in einer Ecke deines Excel-Blattes: <span class="highlight-command">"Tracker von: [Dein Name], [Deine Schul-E-Mail-Adresse]"</span>.</p>
+            </div>
+        </section>
+        
+        <!-- Nächste Lektion -->
+        <section class="lesson-navigation">
+            <div class="nav-buttons">
+                <a href="excel-online-lektion2.html" class="prev-lesson-btn">
+                    <i class="fas fa-arrow-left"></i> Vorherige Lektion
+                </a>
+                <a href="excel-online-lektion4.html" class="next-lesson-btn">
+                    Nächste Lektion: Peer-Feedback & Design <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Digitale Werkstatt | Matthias-Grünewald-Gymnasium</p>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript für Kopierfunktion -->
+    <script src="js/main.js"></script>
+</body>
+</html>

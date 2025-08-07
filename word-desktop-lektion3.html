@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Desktop - Lektion 3</title>
+    
+    <!-- Google Fonts - Poppins für gute Lesbarkeit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Eigene CSS-Datei -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="word-desktop.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Zurück zum Projekt
+        </a>
+        <h1>Word Desktop - Lektion 3</h1>
+    </header>
+    
+    <!-- Hauptinhalt -->
+    <main class="main-content project-page">
+        <!-- Lektionsbeschreibung -->
+        <section class="project-intro">
+            <h2>Lektion 3: Peer-Feedback & Finale Version (45 Min.)</h2>
+            <p class="lesson-goal"><strong>Ziel:</strong> Du teilst dein fertiges Handout, gibst und empfängst Feedback per E-Mail und überarbeitest dein Dokument.</p>
+        </section>
+        
+        <!-- Fortschrittsanzeige -->
+        <section class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" style="width: 100%;"></div>
+            </div>
+            <div class="progress-text">Lektion 3 von 3</div>
+        </section>
+        
+        <!-- Lektionsinhalt -->
+        <section class="lesson project-lesson">
+            <div class="steps">
+                <h3>Schritt 1: Handout teilen und Feedback geben 📤</h3>
+                <p>Speichere dein Word-Dokument als PDF, um es zu teilen: <span class="highlight-command">"Datei"</span> → <span class="highlight-command">"Speichern unter"</span> und wähle als Dateityp <span class="highlight-command">"PDF"</span>.</p>
+                <p>Tausche die PDF-Datei mit deinem Feedback-Partner.</p>
+                <p>Öffne das Handout deines Partners und schreibe eine Feedback-E-Mail.</p>
+                <p>Betreff: <span class="highlight-command">Feedback zu deinem Handout</span></p>
+                <p>Kopiere diesen neuen Feedback-Bogen in die E-Mail:</p>
+                
+                <div id="feedback-container"></div>
+                
+                <h3>Schritt 2: Handout überarbeiten und abschließen ✏️</h3>
+                <p>Lies dein erhaltenes Feedback.</p>
+                <p>Öffne dein Word-Dokument und verbessere es basierend auf den Vorschlägen.</p>
+                <p>Lies dein gesamtes Dokument ein letztes Mal selbst durch, um Fehler zu finden. Die Rechtschreibprüfung (rote Wellenlinien) von Word hilft dir dabei!</p>
+                <p>Speichere deine finale Version als PDF und gib sie bei deiner Lehrkraft ab. Fertig!</p>
+            </div>
+        </section>
+        
+        <!-- Projektabschluss -->
+        <section class="project-completion">
+            <div class="completion-box">
+                <div class="completion-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Herzlichen Glückwunsch! 🎉</h3>
+                <p>Du hast das Projekt "Experten-Handout" erfolgreich abgeschlossen. Du kannst jetzt:</p>
+                <ul>
+                    <li>✅ Wichtige Informationen aus Stichpunkten in verständliche Sätze umwandeln</li>
+                    <li>✅ Textdokumente mit Überschriften, Listen und Absätzen klar strukturieren</li>
+                    <li>✅ Grundlegende Formatierungen beherrschen, um Dokumente lesbar zu machen</li>
+                    <li>✅ Deine Arbeit digital teilen und Feedback per E-Mail geben</li>
+                </ul>
+                <a href="index.html" class="back-to-overview-btn">
+                    <i class="fas fa-home"></i> Zurück zur Übersicht
+                </a>
+            </div>
+        </section>
+        
+        <!-- Vorherige Lektion -->
+        <section class="lesson-navigation">
+            <div class="nav-buttons">
+                <a href="word-desktop-lektion2.html" class="prev-lesson-btn">
+                    <i class="fas fa-arrow-left"></i> Vorherige Lektion
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Digitale Werkstatt | Matthias-Grünewald-Gymnasium</p>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript für Kopierfunktion -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.setAttribute('data-page-type', 'word');
+        });
+    </script>
+</body>
+</html>

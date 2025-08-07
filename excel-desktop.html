@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dein Noten-Tracker mit Excel (Desktop)</title>
+    
+    <!-- Google Fonts - Poppins für gute Lesbarkeit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Eigene CSS-Datei -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Zurück zur Übersicht
+        </a>
+        <h1>Dein Noten-Tracker mit Excel (Desktop)</h1>
+    </header>
+    
+    <!-- Hauptinhalt -->
+    <main class="main-content project-page">
+        <!-- Projektbeschreibung -->
+        <section class="project-intro">
+            <h2>Willkommen beim Projekt "Noten-Tracker"! 📊</h2>
+            <p>Vergiss Zettelwirtschaft! In diesem Projekt baust du dir ein mächtiges Werkzeug, mit dem du das ganze Schuljahr über deine Noten im Blick behalten kannst. Du lernst, wie Excel für dich rechnen kann.</p>
+            
+            <div class="learning-goals">
+                <h3>Deine Lernziele:</h3>
+                <ul>
+                    <li>📋 Du kannst Daten in einer Tabelle klar und sinnvoll strukturieren.</li>
+                    <li>🧮 Du kannst grundlegende Formeln (MITTELWERT) und fortgeschrittene Formeln (MITTELWERTWENN) anwenden.</li>
+                    <li>🔢 Du verstehst den Unterschied zwischen reinen Daten und automatischen Berechnungen.</li>
+                    <li>👥 Du kannst die Funktionalität der Arbeit eines Mitschülers testen und Feedback geben.</li>
+                </ul>
+            </div>
+            
+            <div class="requirements">
+                <h3>Was du brauchst:</h3>
+                <ul>
+                    <li>💻 Microsoft Excel (Desktop-Version)</li>
+                    <li>📝 Eine Liste deiner Fächer</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Teil A: Werkzeugkasten -->
+        <section class="section-divider">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-toolbox"></i>
+                </div>
+                <h2>Teil A: Werkzeugkasten – Die Grundlagen von Excel</h2>
+            </div>
+            <p class="section-description">Hier lernst du die wichtigsten Funktionen von Excel kennen. Diese Grundlagen helfen dir später bei deinem großen Projekt.</p>
+        </section>
+        
+        <!-- Werkzeugkasten Lektion 1 -->
+        <section class="lesson toolbox-lesson">
+            <h2>Lektion 1: Zellen, Daten und einfache Berechnungen</h2>
+            <p class="lesson-goal"><strong>Ziel:</strong> Du verstehst den Aufbau eines Excel-Blattes und kannst einfache mathematische Grundoperationen direkt in Zellen durchführen.</p>
+            
+            <div class="steps">
+                <h3>Datei anlegen & benennen</h3>
+                <p>Öffne Microsoft Excel auf deinem Computer.</p>
+                <p>Wähle <span class="highlight-command">"Leere Arbeitsmappe"</span>.</p>
+                <p><span class="highlight-command">BENENNE DEINE DATEI SOFORT!</span> Klicke auf <span class="highlight-command">"Datei"</span> → <span class="highlight-command">"Speichern unter"</span> und gib den Namen ein: <span class="highlight-command">Nachname_Vorname_Excel-Grundlagen.xlsx</span>. Wähle einen Speicherort auf deinem Computer.</p>
+                
+                <h3>Zellen verstehen</h3>
+                <p>Ein Excel-Blatt besteht aus Spalten (A, B, C...) und Zeilen (1, 2, 3...). Die Kombination ist die Zelladresse, z.B. A1. Klicke auf verschiedene Zellen und beobachte, wie sich die Adresse oben links im Namensfeld ändert.</p>
+                
+                <h3>Daten und Text</h3>
+                <p><strong>Aufgabe:</strong> Schreibe in Zelle A1 das Wort <span class="highlight-command">'Äpfel'</span> und in Zelle B1 die Zahl <span class="highlight-command">5</span>. Beobachte: Text wird standardmäßig linksbündig, Zahlen rechtsbündig ausgerichtet.</p>
+                
+                <h3>Excel als Taschenrechner</h3>
+                <p><strong>Aufgabe:</strong> Klicke in eine leere Zelle (z.B. C1). Jede Formel in Excel beginnt mit einem =. Gib nun <span class="highlight-command">=5+3</span> ein und drücke Enter. Excel zeigt das Ergebnis 8 an. Probiere es auch mit Subtraktion (-), Multiplikation (*) und Division (/).</p>
+                
+                <h3>Rechnen mit Zellbezügen (Das ist der Trick!)</h3>
+                <p><strong>Aufgabe:</strong> Schreibe in Zelle A2 die Zahl 10 und in Zelle B2 die Zahl 20. Klicke in Zelle C2 und gib die Formel <span class="highlight-command">=A2+B2</span> ein. Excel rechnet mit den Werten in den Zellen. Ändere nun den Wert in Zelle A2 auf 100. Beobachte, wie sich das Ergebnis in C2 automatisch anpasst! Das ist die Superkraft von Excel.</p>
+            </div>
+        </section>
+        
+        <!-- Werkzeugkasten Lektion 2 -->
+        <section class="lesson toolbox-lesson">
+            <h2>Lektion 2: Formatierung, Rahmen und einfache Formeln</h2>
+            <p class="lesson-goal"><strong>Ziel:</strong> Du kannst deine Tabellen optisch gestalten und die wichtigste Grundformel (MITTELWERT) anwenden.</p>
+            
+            <div class="steps">
+                <h3>Zellen formatieren</h3>
+                <p>Öffne deine <span class="highlight-command">Excel-Grundlagen.xlsx</span>-Datei.</p>
+                <p><strong>Aufgabe:</strong> Markiere deine Zellen aus der letzten Lektion. Nutze im Menü <span class="highlight-command">"Start"</span> die Werkzeuge Füllfarbe (Farbeimer), um den Hintergrund zu färben, und Schriftfarbe, um den Text zu färben.</p>
+                
+                <h3>Rahmenlinien zeichnen</h3>
+                <p><strong>Aufgabe:</strong> Markiere einen Bereich von 4x4 Zellen. Klicke auf das Rahmen-Symbol (sieht aus wie ein Fenster) und wähle <span class="highlight-command">'Alle Rahmenlinien'</span>. So erstellst du eine saubere Tabelle.</p>
+                
+                <h3>Die erste richtige Formel: MITTELWERT</h3>
+                <p><strong>Aufgabe:</strong> Schreibe untereinander in die Zellen A4, A5 und A6 die Zahlen 10, 20, 30. Klicke in Zelle A7 und tippe die Formel <span class="highlight-command">=MITTELWERT(A4:A6)</span> ein. A4:A6 bedeutet 'der Bereich von Zelle A4 bis Zelle A6'. Excel berechnet den Durchschnitt.</p>
+                
+                <h3>AutoSumme (Der schnelle Weg)</h3>
+                <p><strong>Aufgabe:</strong> Schreibe in die Zellen B4, B5, B6 andere Zahlen. Klicke in die Zelle B7. Finde im Menü <span class="highlight-command">"Start"</span> das griechische Symbol Σ (AutoSumme). Klicke darauf und wähle <span class="highlight-command">'Mittelwert'</span>. Excel schlägt automatisch den richtigen Bereich vor. Drücke Enter. Das ist der schnellste Weg für einfache Berechnungen.</p>
+            </div>
+        </section>
+        
+        <!-- Teil B: Dein Projekt -->
+        <section class="section-divider">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h2>Teil B: Dein Projekt – Die Anwendung "Noten-Tracker"</h2>
+            </div>
+            <p class="section-description">Jetzt wendest du dein neu erworbenes Wissen an und erstellst einen nützlichen Noten-Tracker für das ganze Schuljahr.</p>
+        </section>
+        
+        <!-- Lektionsübersicht -->
+        <section class="lesson-overview">
+            <h2>Lektionsübersicht</h2>
+            <div class="lesson-list">
+                <div class="lesson-item">
+                    <span class="lesson-number">1</span>
+                    <span class="lesson-title">Das Grundgerüst</span>
+                    <span class="lesson-time">45 Min.</span>
+                    <a href="excel-desktop-lektion1.html">Starten</a>
+                </div>
+                <div class="lesson-item">
+                    <span class="lesson-number">2</span>
+                    <span class="lesson-title">Die ersten automatischen Berechnungen</span>
+                    <span class="lesson-time">45 Min.</span>
+                    <a href="excel-desktop-lektion2.html">Starten</a>
+                </div>
+                <div class="lesson-item">
+                    <span class="lesson-number">3</span>
+                    <span class="lesson-title">Die Formel für Profis</span>
+                    <span class="lesson-time">45 Min.</span>
+                    <a href="excel-desktop-lektion3.html">Starten</a>
+                </div>
+                <div class="lesson-item">
+                    <span class="lesson-number">4</span>
+                    <span class="lesson-title">Peer-Feedback & Design</span>
+                    <span class="lesson-time">45 Min.</span>
+                    <a href="excel-desktop-lektion4.html">Starten</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Für Profis Box -->
+        <section class="pro-tips">
+            <div class="pro-box">
+                <div class="pro-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Für Profis (Zusatzaufgaben)</h3>
+                <ul>
+                    <li><strong>Design-Profi:</strong> Nutze die <span class="highlight-command">"Bedingte Formatierung"</span>. Markiere alle deine Noten in Spalte D. Gehe zu <span class="highlight-command">"Start"</span> → <span class="highlight-command">"Bedingte Formatierung"</span> → <span class="highlight-command">"Regeln zum Hervorheben von Zellen"</span> → <span class="highlight-command">"Gleich..."</span>. Erstelle eine Regel, die die Note 6 automatisch rot färbt und eine Regel, die die Note 1 automatisch grün färbt.</li>
+                    <li><strong>Formel-Profi:</strong> Füge deinem Übersichts-Cockpit eine neue Zeile hinzu: <span class="highlight-command">"Anzahl der Mathe-Arbeiten"</span>. Finde mit der Formel <span class="highlight-command">=ZÄHLENWENN(B:B; "Mathe")</span> heraus, wie viele Noten du bereits in Mathe gesammelt hast.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Digitale Werkstatt | Matthias-Grünewald-Gymnasium</p>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript für Kopierfunktion -->
+    <script src="js/main.js"></script>
+</body>
+</html>

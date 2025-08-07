@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Desktop - Lektion 2</title>
+    
+    <!-- Google Fonts - Poppins für gute Lesbarkeit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Eigene CSS-Datei -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="excel-desktop.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Zurück zum Projekt
+        </a>
+        <h1>Excel Desktop - Lektion 2</h1>
+    </header>
+    
+    <!-- Hauptinhalt -->
+    <main class="main-content project-page">
+        <!-- Lektionsbeschreibung -->
+        <section class="project-intro">
+            <h2>Lektion 2: Die ersten automatischen Berechnungen (45 Min.)</h2>
+            <p class="lesson-goal"><strong>Ziel:</strong> Heute bringst du deinem Tracker das Rechnen bei. Du berechnest deinen allerersten Notendurchschnitt automatisch.</p>
+        </section>
+        
+        <!-- Fortschrittsanzeige -->
+        <section class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" style="width: 50%;"></div>
+            </div>
+            <div class="progress-text">Lektion 2 von 4</div>
+        </section>
+        
+        <!-- Lektionsinhalt -->
+        <section class="lesson project-lesson">
+            <div class="steps">
+                <h3>Schritt 1: Deinen Gesamt-Durchschnitt berechnen 🧮</h3>
+                <p>Finde eine leere Zelle etwas abseits deiner Tabelle (z.B. F2).</p>
+                <p>Schreibe in die Zelle links daneben (E2) als Beschriftung: <span class="highlight-command">Mein Gesamt-Schnitt:</span></p>
+                <p>Klicke in die Zelle F2. Gib nun exakt diese Formel ein: <span class="highlight-command">=MITTELWERT(D:D)</span></p>
+                <p>Drücke Enter. Excel berechnet nun den Durchschnitt aller Zahlen, die in der kompletten Spalte D (deiner Notenspalte) stehen.</p>
+                
+                <h3>Schritt 2: Das Übersichts-Cockpit anlegen 📊</h3>
+                <p>Wir erstellen einen separaten Bereich für die Übersicht. Finde einen freien Platz (z.B. unter deinem Gesamt-Schnitt).</p>
+                <p>Schreibe untereinander deine Hauptfächer (z.B. in die Zellen E5, E6, E7): <span class="highlight-command">Mathe</span>, <span class="highlight-command">Deutsch</span>, <span class="highlight-command">Englisch</span>.</p>
+                <p>Schreibe daneben in Zelle F4 als Überschrift: <span class="highlight-command">Mein Fach-Schnitt</span>.</p>
+            </div>
+            
+            <div class="toolbox-reminder">
+                <i class="fas fa-lightbulb"></i>
+                <p><strong>Tipp aus dem Werkzeugkasten:</strong> Nutze die MITTELWERT-Formel, die du bereits aus Lektion 2 kennst. Du kannst sie auch über die AutoSumme-Funktion einfügen!</p>
+            </div>
+        </section>
+        
+        <!-- Nächste Lektion -->
+        <section class="lesson-navigation">
+            <div class="nav-buttons">
+                <a href="excel-desktop-lektion1.html" class="prev-lesson-btn">
+                    <i class="fas fa-arrow-left"></i> Vorherige Lektion
+                </a>
+                <a href="excel-desktop-lektion3.html" class="next-lesson-btn">
+                    Nächste Lektion: Die Formel für Profis <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Digitale Werkstatt | Matthias-Grünewald-Gymnasium</p>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript für Kopierfunktion -->
+    <script src="js/main.js"></script>
+</body>
+</html>
