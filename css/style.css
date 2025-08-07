@@ -1,0 +1,838 @@
+/* 
+Digitale Werkstatt - Lernplattform für Microsoft Office Projekte
+CSS-Stylesheet für eine schülerfreundliche, responsive Lernplattform
+*/
+
+/* ===== GRUNDEINSTELLUNGEN & TYPOGRAFIE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Farbpalette - freundlich und schultauglich */
+    --primary-color: #4A90E2;      /* Mittleres Blau als Akzentfarbe */
+    --primary-dark: #357ABD;      /* Dunkleres Blau für Hover-Effekte */
+    --secondary-color: #5CB85C;    /* Freundliches Grün für positive Elemente */
+    --background-color: #F5F7FA;   /* Sehr helles Grau-Blau als Hintergrund */
+    --card-background: #FFFFFF;   /* Weiß für Karten */
+    --text-primary: #2C3E50;      /* Dunkles Blau-Grau für Haupttext */
+    --text-secondary: #7F8C8D;    /* Mittleres Grau für weniger wichtigen Text */
+    --border-color: #E1E8ED;       /* Helles Grau für Rahmen und Trennlinien */
+    --highlight-bg: #FFF3CD;       /* Helles Gelb für hervorgehobene Befehle */
+    --pro-box-bg: #E8F4FD;        /* Helles Blau für "Für Profis" Box */
+    --success-color: #28A745;      /* Grün für Erfolgsmeldungen */
+    
+    /* Abstände und Größen */
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Zurück-Link nur auf Projektseiten */
+.back-link {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-50%) translateX(-3px);
+}
+
+/* ===== HAUPTINHALT ===== */
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+/* Willkommensnachricht auf Startseite */
+.welcome-message {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.welcome-message p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+/* ===== PROJEKTKARTEN (STARTSEITE) ===== */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.project-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ===== PROJEKTSEITEN ===== */
+.project-page {
+    max-width: 800px;
+}
+
+/* Projektbeschreibung */
+.project-intro {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.project-intro h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+.learning-goals, .requirements {
+    margin-top: 1.5rem;
+}
+
+.learning-goals h3, .requirements h3 {
+    color: var(--primary-dark);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.learning-goals ul, .requirements ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.learning-goals li, .requirements li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.learning-goals li::before, .requirements li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* ===== LEKTIONEN ===== */
+.lesson {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.lesson h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    font-size: 1.5rem;
+}
+
+.lesson-goal {
+    background-color: var(--highlight-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.steps {
+    margin-top: 1.5rem;
+}
+
+.steps h3 {
+    color: var(--primary-dark);
+    margin: 1.5rem 0 0.75rem 0;
+    font-size: 1.1rem;
+}
+
+.steps h3:first-child {
+    margin-top: 0;
+}
+
+.steps p {
+    margin-bottom: 1rem;
+}
+
+.steps ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.steps li {
+    margin-bottom: 0.5rem;
+}
+
+/* Hervorgehobene Befehle und wichtige Texte */
+.highlight-command {
+    background-color: var(--highlight-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    border: 1px solid #FFE082;
+    white-space: nowrap;
+}
+
+.code-example {
+    background-color: #F8F9FA;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+/* ===== FEEDBACK-TEMPLATES ===== */
+.feedback-template {
+    margin: 1.5rem 0;
+}
+
+.copy-container {
+    position: relative;
+    background-color: #F8F9FA;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.copy-container pre {
+    margin: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.copy-container code {
+    font-family: inherit;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.copy-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.copy-btn.copied {
+    background-color: var(--success-color);
+}
+
+.copy-btn i {
+    font-size: 0.9rem;
+}
+
+/* ===== SEKTIONS-TEILER ===== */
+.section-divider {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border-radius: var(--border-radius);
+    color: white;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.section-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.section-divider h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== WERKZEUGKASTEN & PROJEKT LEKTIONEN ===== */
+.toolbox-lesson {
+    border-left: 5px solid var(--secondary-color);
+}
+
+.toolbox-lesson h2::before {
+    content: "🔧 ";
+    margin-right: 0.5rem;
+}
+
+.project-lesson {
+    border-left: 5px solid var(--primary-color);
+}
+
+.project-lesson h2::before {
+    content: "🎯 ";
+    margin-right: 0.5rem;
+}
+
+/* ===== WERKZEUGKASTEN-REMINDER ===== */
+.toolbox-reminder {
+    background-color: rgba(92, 184, 92, 0.1);
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.toolbox-reminder i {
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+    margin-top: 0.1rem;
+}
+
+.toolbox-reminder p {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.toolbox-reminder strong {
+    color: var(--secondary-color);
+}
+
+/* ===== FÜR PROFIS BOX ===== */
+.pro-tips {
+    margin-top: 2rem;
+}
+
+.pro-box {
+    background-color: var(--pro-box-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    position: relative;
+}
+
+.pro-icon {
+    position: absolute;
+    top: -1.5rem;
+    left: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.pro-box h3 {
+    color: var(--primary-dark);
+    margin: 1rem 0 1.5rem 0;
+    font-size: 1.25rem;
+}
+
+.pro-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.pro-box li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.pro-box li::before {
+    content: "⭐";
+    position: absolute;
+    left: 0;
+}
+
+.pro-box strong {
+    color: var(--primary-dark);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.footer-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    /* Header anpassen */
+    .header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .back-link {
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+    
+    .back-link:hover {
+        transform: none;
+    }
+    
+    /* Hauptinhalt anpassen */
+    .main-content {
+        padding: 1rem;
+    }
+    
+    /* Projektkarten anpassen */
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    /* Projektseiten anpassen */
+    .project-intro, .lesson, .pro-box {
+        padding: 1.5rem;
+    }
+    
+    .pro-icon {
+        left: 1.5rem;
+    }
+    
+    /* Sektionsteiler anpassen */
+    .section-divider {
+        margin: 2rem 0;
+        padding: 1.5rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .section-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.25rem;
+    }
+    
+    .section-divider h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+    }
+    
+    /* Toolbox-Reminder anpassen */
+    .toolbox-reminder {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .toolbox-reminder i {
+        margin-top: 0;
+    }
+    
+    /* Feedback-Template anpassen */
+    .copy-container pre {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .copy-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Footer anpassen */
+    .footer-links {
+        gap: 1rem;
+    }
+    
+    .footer-links a {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Noch kleinere Bildschirme */
+    .header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .welcome-message p {
+        font-size: 1.1rem;
+    }
+    
+    .project-card h2 {
+        font-size: 1.25rem;
+    }
+    
+    .lesson h2 {
+        font-size: 1.25rem;
+    }
+    
+    .copy-container pre {
+        font-size: 0.75rem;
+    }
+}
+
+/* ===== SPEZIELLE EFFEKTE ===== */
+/* Sanfte Animationen beim Laden der Seite */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card, .project-intro, .lesson, .pro-box {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Verbesserte Lesbarkeit für lange Texte */
+.steps p, .steps li {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+/* Barrierefreie Fokus-Indikatoren */
+a:focus, button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ===== IMPRESSUM & DATENSCHUTZ SEITEN ===== */
+.legal-content, .privacy-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.legal-section, .privacy-section {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.legal-section h2, .privacy-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.legal-section h2 i, .privacy-section h2 i {
+    font-size: 1.5rem;
+}
+
+.legal-info, .privacy-info {
+    line-height: 1.8;
+}
+
+.legal-info h3, .privacy-info h3, .privacy-subsection h3 {
+    color: var(--primary-dark);
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.25rem;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+.legal-info h4, .privacy-info h4 {
+    color: var(--text-primary);
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legal-info h4 i, .privacy-info h4 i {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.legal-info ul, .privacy-info ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.legal-info li, .privacy-info li {
+    margin-bottom: 0.75rem;
+}
+
+.privacy-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.privacy-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.privacy-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.contact-card {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.contact-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.data-processing-item {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.notice-box {
+    background-color: rgba(74, 144, 226, 0.1);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.notice-box i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 0.1rem;
+}
+
+.notice-box p {
+    margin: 0;
+}
+
+.privacy-intro {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(53, 122, 189, 0.1) 100%);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid var(--primary-color);
+}
+
+.privacy-intro h2 {
+    margin-bottom: 1rem;
+}
+
+.privacy-intro p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.privacy-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* Druckoptimierung */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .header, .footer {
+        background-color: white !important;
+        color: black !important;
+        box-shadow: none;
+        border-bottom: 1px solid black;
+    }
+    
+    .project-card, .project-intro, .lesson, .pro-box {
+        box-shadow: none;
+        border: 1px solid black;
+        break-inside: avoid;
+    }
+    
+    .copy-btn {
+        display: none;
+    }
+    
+    .back-link {
+        display: none;
+    }
+}
