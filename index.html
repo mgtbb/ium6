@@ -95,7 +95,7 @@
                                 <i class="fas fa-file-excel"></i>
                             </div>
                             <h2>Noten-Tracker</h2>
-                            <p class="course-description">Baue ein Werkzeug, das deine Noten automatisch berechnet.</p>
+                            <p class="course-description">Bau ein Werkzeug, das deine Noten automatisch berechnet.</p>
                             <div class="course-meta">
                                 <div class="lesson-count">
                                     <i class="fas fa-book"></i>
@@ -167,7 +167,7 @@
                                 <i class="fas fa-file-excel"></i>
                             </div>
                             <h2>Noten-Tracker</h2>
-                            <p class="course-description">Baue ein Werkzeug, das deine Noten automatisch berechnet.</p>
+                            <p class="course-description">Bau ein Werkzeug, das deine Noten automatisch berechnet.</p>
                             <div class="course-meta">
                                 <div class="lesson-count">
                                     <i class="fas fa-book"></i>
@@ -200,22 +200,35 @@
         </div>
     </footer>
     
-    <!-- JavaScript für Plattform-Auswahl -->
+    <!-- JavaScript für Plattform-Auswahl mit Animation -->
     <script>
-        // Funktion zum Aktualisieren der Kursdarstellung
+        // Funktion zum Aktualisieren der Kursdarstellung mit Animation
         function updateCourses() {
             const desktopCourses = document.getElementById('desktop-courses');
             const onlineCourses = document.getElementById('online-courses');
             const activeTab = document.querySelector('.platform-tab.active');
             const platform = activeTab.getAttribute('data-platform');
             
-            if (platform === 'desktop') {
-                desktopCourses.style.display = 'flex';
-                onlineCourses.style.display = 'none';
-            } else {
-                desktopCourses.style.display = 'none';
-                onlineCourses.style.display = 'flex';
-            }
+            // Animation auslösen
+            desktopCourses.classList.add('fade-out');
+            onlineCourses.classList.add('fade-out');
+            
+            // Nach Abschluss der Animation den Inhalt wechseln
+            setTimeout(() => {
+                if (platform === 'desktop') {
+                    desktopCourses.style.display = 'flex';
+                    onlineCourses.style.display = 'none';
+                } else {
+                    desktopCourses.style.display = 'none';
+                    onlineCourses.style.display = 'flex';
+                }
+                
+                // Animation zurücksetzen
+                setTimeout(() => {
+                    desktopCourses.classList.remove('fade-out');
+                    onlineCourses.classList.remove('fade-out');
+                }, 50);
+            }, 500);
         }
         
         // Initialisierung beim Laden der Seite
@@ -232,9 +245,6 @@
                     updateCourses();
                 });
             });
-            
-            // Stelle sicher, dass die Desktop-Kurse korrekt angezeigt werden
-            updateCourses();
         });
     </script>
 </body>
