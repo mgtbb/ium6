@@ -20,6 +20,7 @@
     <!-- Header -->
     <header class="header">
         <h1>Digitale Werkstatt: Deine Office-Projekte</h1>
+        <p class="header-subtitle">Meistere die Grundlagen von PowerPoint, Word und Excel mit interaktiven Projekten</p>
     </header>
     
     <!-- Hauptinhalt -->
@@ -31,81 +32,156 @@
             
             <!-- Auswahlmenü für Browser/Desktop -->
             <div class="platform-selector">
-                <div class="selector-container">
-                    <label for="platform-select">Wähle deine Plattform:</label>
-                    <select id="platform-select">
-                        <option value="desktop" selected>Desktop-Programme</option>
-                        <option value="online">Office 365 (Browser)</option>
-                    </select>
+                <div class="platform-tabs">
+                    <button class="platform-tab active" data-platform="desktop">Desktop-Programme</button>
+                    <button class="platform-tab" data-platform="online">Office 365 (Browser)</button>
                 </div>
             </div>
             
-            <!-- Projektkarten Container -->
-            <div class="projects-container" id="projects-container">
-                <!-- Desktop-Projekte (Standard ausgewählt) -->
-                <div id="desktop-projects" class="platform-projects">
-                    <!-- Projekt 1: PowerPoint Desktop -->
-                    <a href="powerpoint-desktop.html" class="project-card powerpoint-card">
-                        <div class="card-icon">
-                            <i class="fas fa-file-powerpoint"></i>
+            <!-- Kursmodule Container -->
+            <div class="courses-container" id="courses-container">
+                <!-- Desktop-Kurse (Standard ausgewählt) -->
+                <div id="desktop-courses" class="platform-courses">
+                    <!-- Kurs 1: PowerPoint Desktop -->
+                    <div class="course-card tier-expert-course">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-file-powerpoint"></i>
+                            </div>
+                            <h2>Tier-Experte</h2>
+                            <p class="course-description">Erstelle eine spannende Präsentation über dein Lieblingstier.</p>
+                            <div class="course-meta">
+                                <div class="lesson-count">
+                                    <i class="fas fa-book"></i>
+                                    <span>4 Lektionen</span>
+                                </div>
+                            </div>
                         </div>
-                        <h2>Werde zum Tier-Experten mit PowerPoint</h2>
-                        <p>Erstelle eine spannende Präsentation über dein Lieblingstier.</p>
-                        <span class="platform-badge">Desktop-Version</span>
-                    </a>
+                        <div class="course-body">
+                            <a href="powerpoint-desktop.html" class="start-course-btn">
+                                <span>Projekt starten</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                     
-                    <!-- Projekt 2: Word Desktop -->
-                    <a href="word-desktop.html" class="project-card word-card">
-                        <div class="card-icon">
-                            <i class="fas fa-file-word"></i>
+                    <!-- Kurs 2: Word Desktop -->
+                    <div class="course-card handout-expert-course">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <h2>Experten-Handout</h2>
+                            <p class="course-description">Fasse dein Wissen professionell auf einer Seite zusammen.</p>
+                            <div class="course-meta">
+                                <div class="lesson-count">
+                                    <i class="fas fa-book"></i>
+                                    <span>3 Lektionen</span>
+                                </div>
+                            </div>
                         </div>
-                        <h2>Das Experten-Handout mit Word</h2>
-                        <p>Fasse dein Wissen professionell auf einer Seite zusammen.</p>
-                        <span class="platform-badge">Desktop-Version</span>
-                    </a>
+                        <div class="course-body">
+                            <a href="word-desktop.html" class="start-course-btn">
+                                <span>Projekt starten</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                     
-                    <!-- Projekt 3: Excel Desktop -->
-                    <a href="excel-desktop.html" class="project-card excel-card">
-                        <div class="card-icon">
-                            <i class="fas fa-file-excel"></i>
+                    <!-- Kurs 3: Excel Desktop -->
+                    <div class="course-card excel-course">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-file-excel"></i>
+                            </div>
+                            <h2>Noten-Tracker</h2>
+                            <p class="course-description">Baue ein Werkzeug, das deine Noten automatisch berechnet.</p>
+                            <div class="course-meta">
+                                <div class="lesson-count">
+                                    <i class="fas fa-book"></i>
+                                    <span>4 Lektionen</span>
+                                </div>
+                            </div>
                         </div>
-                        <h2>Dein Noten-Tracker mit Excel</h2>
-                        <p>Baue ein Werkzeug, das deine Noten automatisch berechnet.</p>
-                        <span class="platform-badge">Desktop-Version</span>
-                    </a>
+                        <div class="course-body">
+                            <a href="excel-desktop.html" class="start-course-btn">
+                                <span>Projekt starten</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- Online-Projekte (zunächst ausgeblendet) -->
-                <div id="online-projects" class="platform-projects" style="display: none;">
-                    <!-- Projekt 1: PowerPoint Online -->
-                    <a href="powerpoint-online.html" class="project-card powerpoint-card">
-                        <div class="card-icon">
-                            <i class="fas fa-file-powerpoint"></i>
+                <!-- Online-Kurse (zunächst ausgeblendet) -->
+                <div id="online-courses" class="platform-courses" style="display: none;">
+                    <!-- Kurs 1: PowerPoint Online -->
+                    <div class="course-card tier-expert-course">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-file-powerpoint"></i>
+                            </div>
+                            <h2>Tier-Experte</h2>
+                            <p class="course-description">Erstelle eine spannende Präsentation über dein Lieblingstier.</p>
+                            <div class="course-meta">
+                                <div class="lesson-count">
+                                    <i class="fas fa-book"></i>
+                                    <span>4 Lektionen</span>
+                                </div>
+                            </div>
                         </div>
-                        <h2>Werde zum Tier-Experten mit PowerPoint</h2>
-                        <p>Erstelle eine spannende Präsentation über dein Lieblingstier.</p>
-                        <span class="platform-badge">Online-Version</span>
-                    </a>
+                        <div class="course-body">
+                            <a href="powerpoint-online.html" class="start-course-btn">
+                                <span>Projekt starten</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                     
-                    <!-- Projekt 2: Word Online -->
-                    <a href="word-online.html" class="project-card word-card">
-                        <div class="card-icon">
-                            <i class="fas fa-file-word"></i>
+                    <!-- Kurs 2: Word Online -->
+                    <div class="course-card handout-expert-course">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <h2>Experten-Handout</h2>
+                            <p class="course-description">Fasse dein Wissen professionell auf einer Seite zusammen.</p>
+                            <div class="course-meta">
+                                <div class="lesson-count">
+                                    <i class="fas fa-book"></i>
+                                    <span>3 Lektionen</span>
+                                </div>
+                            </div>
                         </div>
-                        <h2>Das Experten-Handout mit Word</h2>
-                        <p>Fasse dein Wissen professionell auf einer Seite zusammen.</p>
-                        <span class="platform-badge">Online-Version</span>
-                    </a>
+                        <div class="course-body">
+                            <a href="word-online.html" class="start-course-btn">
+                                <span>Projekt starten</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                     
-                    <!-- Projekt 3: Excel Online -->
-                    <a href="excel-online.html" class="project-card excel-card">
-                        <div class="card-icon">
-                            <i class="fas fa-file-excel"></i>
+                    <!-- Kurs 3: Excel Online -->
+                    <div class="course-card excel-course">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-file-excel"></i>
+                            </div>
+                            <h2>Noten-Tracker</h2>
+                            <p class="course-description">Baue ein Werkzeug, das deine Noten automatisch berechnet.</p>
+                            <div class="course-meta">
+                                <div class="lesson-count">
+                                    <i class="fas fa-book"></i>
+                                    <span>4 Lektionen</span>
+                                </div>
+                            </div>
                         </div>
-                        <h2>Dein Noten-Tracker mit Excel</h2>
-                        <p>Baue ein Werkzeug, das deine Noten automatisch berechnet.</p>
-                        <span class="platform-badge">Online-Version</span>
-                    </a>
+                        <div class="course-body">
+                            <a href="excel-online.html" class="start-course-btn">
+                                <span>Projekt starten</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -126,28 +202,39 @@
     
     <!-- JavaScript für Plattform-Auswahl -->
     <script>
-        // Funktion zum Aktualisieren der Projektdarstellung
-        function updateProjects() {
-            const selector = document.getElementById('platform-select');
-            const desktopProjects = document.getElementById('desktop-projects');
-            const onlineProjects = document.getElementById('online-projects');
+        // Funktion zum Aktualisieren der Kursdarstellung
+        function updateCourses() {
+            const desktopCourses = document.getElementById('desktop-courses');
+            const onlineCourses = document.getElementById('online-courses');
+            const activeTab = document.querySelector('.platform-tab.active');
+            const platform = activeTab.getAttribute('data-platform');
             
-            if (selector.value === 'desktop') {
-                desktopProjects.style.display = 'flex';
-                onlineProjects.style.display = 'none';
+            if (platform === 'desktop') {
+                desktopCourses.style.display = 'flex';
+                onlineCourses.style.display = 'none';
             } else {
-                desktopProjects.style.display = 'none';
-                onlineProjects.style.display = 'flex';
+                desktopCourses.style.display = 'none';
+                onlineCourses.style.display = 'flex';
             }
         }
         
         // Initialisierung beim Laden der Seite
         document.addEventListener('DOMContentLoaded', function() {
-            // Stelle sicher, dass die Desktop-Projekte korrekt angezeigt werden
-            updateProjects();
+            // Event-Listener für die Tabs hinzufügen
+            const tabs = document.querySelectorAll('.platform-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Aktive Klasse entfernen
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Aktive Klasse zum geklickten Tab hinzufügen
+                    this.classList.add('active');
+                    // Kurse aktualisieren
+                    updateCourses();
+                });
+            });
             
-            // Event-Listener für die Auswahl hinzufügen
-            document.getElementById('platform-select').addEventListener('change', updateProjects);
+            // Stelle sicher, dass die Desktop-Kurse korrekt angezeigt werden
+            updateCourses();
         });
     </script>
 </body>
