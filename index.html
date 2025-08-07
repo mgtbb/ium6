@@ -24,104 +24,109 @@
     
     <!-- Hauptinhalt -->
     <main class="main-content">
-        <div class="welcome-message">
-            <p>Hallo! Wähle zunächst aus, ob du mit den Online-Versionen oder den Desktop-Programmen arbeiten möchtest.</p>
-        </div>
-        
-        <!-- Auswahlmenü für Browser/Desktop -->
-        <div class="platform-selector">
-            <div class="selector-container">
-                <label for="platform-select">Wähle deine Plattform:</label>
-                <select id="platform-select" onchange="updateProjects()">
-                    <option value="desktop" selected>Desktop-Programme</option>
-                    <option value="online">Office 365 (Browser)</option>
-                </select>
-            </div>
-        </div>
-        
-        <!-- Projektkarten Container -->
-        <div class="projects-container" id="projects-container">
-            <!-- Desktop-Projekte (Standard ausgewählt) -->
-            <div id="desktop-projects">
-                <!-- Projekt 1: PowerPoint Desktop -->
-                <a href="powerpoint-desktop.html" class="project-card powerpoint-card">
-                    <div class="card-icon">
-                        <i class="fas fa-file-powerpoint"></i>
-                    </div>
-                    <h2>Werde zum Tier-Experten mit PowerPoint</h2>
-                    <p>Erstelle eine spannende Präsentation über dein Lieblingstier.</p>
-                    <span class="platform-badge">Desktop-Version</span>
-                </a>
-                
-                <!-- Projekt 2: Word Desktop -->
-                <a href="word-desktop.html" class="project-card word-card">
-                    <div class="card-icon">
-                        <i class="fas fa-file-word"></i>
-                    </div>
-                    <h2>Das Experten-Handout mit Word</h2>
-                    <p>Fasse dein Wissen professionell auf einer Seite zusammen.</p>
-                    <span class="platform-badge">Desktop-Version</span>
-                </a>
-                
-                <!-- Projekt 3: Excel Desktop -->
-                <a href="excel-desktop.html" class="project-card excel-card">
-                    <div class="card-icon">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
-                    <h2>Dein Noten-Tracker mit Excel</h2>
-                    <p>Baue ein Werkzeug, das deine Noten automatisch berechnet.</p>
-                    <span class="platform-badge">Desktop-Version</span>
-                </a>
+        <div class="container">
+            <div class="welcome-message">
+                <p>Hallo! Wähle zunächst aus, ob du mit den Online-Versionen oder den Desktop-Programmen arbeiten möchtest.</p>
             </div>
             
-            <!-- Online-Projekte (zunächst ausgeblendet) -->
-            <div id="online-projects" style="display: none;">
-                <!-- Projekt 1: PowerPoint Online -->
-                <a href="powerpoint-online.html" class="project-card powerpoint-card">
-                    <div class="card-icon">
-                        <i class="fas fa-file-powerpoint"></i>
-                    </div>
-                    <h2>Werde zum Tier-Experten mit PowerPoint</h2>
-                    <p>Erstelle eine spannende Präsentation über dein Lieblingstier.</p>
-                    <span class="platform-badge">Online-Version</span>
-                </a>
+            <!-- Auswahlmenü für Browser/Desktop -->
+            <div class="platform-selector">
+                <div class="selector-container">
+                    <label for="platform-select">Wähle deine Plattform:</label>
+                    <select id="platform-select">
+                        <option value="desktop" selected>Desktop-Programme</option>
+                        <option value="online">Office 365 (Browser)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Projektkarten Container -->
+            <div class="projects-container" id="projects-container">
+                <!-- Desktop-Projekte (Standard ausgewählt) -->
+                <div id="desktop-projects" class="platform-projects">
+                    <!-- Projekt 1: PowerPoint Desktop -->
+                    <a href="powerpoint-desktop.html" class="project-card powerpoint-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-powerpoint"></i>
+                        </div>
+                        <h2>Werde zum Tier-Experten mit PowerPoint</h2>
+                        <p>Erstelle eine spannende Präsentation über dein Lieblingstier.</p>
+                        <span class="platform-badge">Desktop-Version</span>
+                    </a>
+                    
+                    <!-- Projekt 2: Word Desktop -->
+                    <a href="word-desktop.html" class="project-card word-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <h2>Das Experten-Handout mit Word</h2>
+                        <p>Fasse dein Wissen professionell auf einer Seite zusammen.</p>
+                        <span class="platform-badge">Desktop-Version</span>
+                    </a>
+                    
+                    <!-- Projekt 3: Excel Desktop -->
+                    <a href="excel-desktop.html" class="project-card excel-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <h2>Dein Noten-Tracker mit Excel</h2>
+                        <p>Baue ein Werkzeug, das deine Noten automatisch berechnet.</p>
+                        <span class="platform-badge">Desktop-Version</span>
+                    </a>
+                </div>
                 
-                <!-- Projekt 2: Word Online -->
-                <a href="word-online.html" class="project-card word-card">
-                    <div class="card-icon">
-                        <i class="fas fa-file-word"></i>
-                    </div>
-                    <h2>Das Experten-Handout mit Word</h2>
-                    <p>Fasse dein Wissen professionell auf einer Seite zusammen.</p>
-                    <span class="platform-badge">Online-Version</span>
-                </a>
-                
-                <!-- Projekt 3: Excel Online -->
-                <a href="excel-online.html" class="project-card excel-card">
-                    <div class="card-icon">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
-                    <h2>Dein Noten-Tracker mit Excel</h2>
-                    <p>Baue ein Werkzeug, das deine Noten automatisch berechnet.</p>
-                    <span class="platform-badge">Online-Version</span>
-                </a>
+                <!-- Online-Projekte (zunächst ausgeblendet) -->
+                <div id="online-projects" class="platform-projects" style="display: none;">
+                    <!-- Projekt 1: PowerPoint Online -->
+                    <a href="powerpoint-online.html" class="project-card powerpoint-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-powerpoint"></i>
+                        </div>
+                        <h2>Werde zum Tier-Experten mit PowerPoint</h2>
+                        <p>Erstelle eine spannende Präsentation über dein Lieblingstier.</p>
+                        <span class="platform-badge">Online-Version</span>
+                    </a>
+                    
+                    <!-- Projekt 2: Word Online -->
+                    <a href="word-online.html" class="project-card word-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <h2>Das Experten-Handout mit Word</h2>
+                        <p>Fasse dein Wissen professionell auf einer Seite zusammen.</p>
+                        <span class="platform-badge">Online-Version</span>
+                    </a>
+                    
+                    <!-- Projekt 3: Excel Online -->
+                    <a href="excel-online.html" class="project-card excel-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <h2>Dein Noten-Tracker mit Excel</h2>
+                        <p>Baue ein Werkzeug, das deine Noten automatisch berechnet.</p>
+                        <span class="platform-badge">Online-Version</span>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
     
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Digitale Werkstatt | Matthias-Grünewald-Gymnasium</p>
-            <div class="footer-links">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Digitale Werkstatt | Matthias-Grünewald-Gymnasium</p>
+                <div class="footer-links">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                </div>
             </div>
         </div>
     </footer>
     
     <!-- JavaScript für Plattform-Auswahl -->
     <script>
+        // Funktion zum Aktualisieren der Projektdarstellung
         function updateProjects() {
             const selector = document.getElementById('platform-select');
             const desktopProjects = document.getElementById('desktop-projects');
@@ -135,6 +140,15 @@
                 onlineProjects.style.display = 'flex';
             }
         }
+        
+        // Initialisierung beim Laden der Seite
+        document.addEventListener('DOMContentLoaded', function() {
+            // Stelle sicher, dass die Desktop-Projekte korrekt angezeigt werden
+            updateProjects();
+            
+            // Event-Listener für die Auswahl hinzufügen
+            document.getElementById('platform-select').addEventListener('change', updateProjects);
+        });
     </script>
 </body>
 </html>
