@@ -15,20 +15,17 @@
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f5f7fa;
 }
-
 .container {
     width: 100%;
     max-width: 1200px;
@@ -40,16 +37,23 @@ body {
 .header {
     background-color: var(--primary-color);
     color: white;
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
     box-shadow: var(--box-shadow);
 }
-
 .header h1 {
     font-size: 2.5rem;
     font-weight: 700;
+    margin-bottom: 10px;
 }
-
+/* NEU: Subtitle im Header */
+.header-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+}
 .back-link {
     position: absolute;
     left: 20px;
@@ -62,7 +66,6 @@ body {
     font-weight: 500;
     transition: var(--transition);
 }
-
 .back-link:hover {
     transform: translateX(-5px);
 }
@@ -72,7 +75,6 @@ body {
     padding: 40px 0;
     min-height: calc(100vh - 140px);
 }
-
 .welcome-message {
     text-align: center;
     margin-bottom: 30px;
@@ -80,43 +82,129 @@ body {
     color: var(--dark-color);
 }
 
-/* Plattform-Auswahl */
+/* Plattform-Auswahl - ANGEPASST */
 .platform-selector {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
 }
+.platform-tabs {
+    display: flex;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+.platform-tab {
+    padding: 12px 30px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+.platform-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+.platform-tab:hover:not(.active) {
+    background-color: var(--light-color);
+}
 
-.selector-container {
+/* Kursmodule - NEU/ANGEPASST */
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+.course-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    transition: var(--transition);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
 }
-
-.selector-container label {
-    font-weight: 600;
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.course-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.tier-expert-course .course-icon {
+    background-color: rgba(196, 62, 28, 0.1);
+    color: var(--powerpoint-color);
+}
+.handout-expert-course .course-icon {
+    background-color: rgba(43, 87, 154, 0.1);
+    color: var(--word-color);
+}
+.course-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
     color: var(--dark-color);
 }
-
-.selector-container select {
-    padding: 10px 15px;
+.course-description {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+.course-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
+.lesson-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.start-course-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
     border-radius: var(--border-radius);
-    border: 1px solid #ddd;
+    padding: 12px 25px;
     font-size: 1rem;
-    background-color: white;
-    box-shadow: var(--box-shadow);
+    font-weight: 600;
     cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.start-course-btn:hover {
+    background-color: #3a5a9e;
+    transform: translateY(-3px);
 }
 
-/* Projektkarten */
+/* Alte Projektkarten - Auskommentiert oder durch neue Kursmodule ersetzt */
+/*
 .projects-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
 }
-
 .project-card {
     background-color: white;
     border-radius: var(--border-radius);
@@ -130,52 +218,41 @@ body {
     position: relative;
     overflow: hidden;
 }
-
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
-
 .powerpoint-card {
     border-top: 5px solid var(--powerpoint-color);
 }
-
 .word-card {
     border-top: 5px solid var(--word-color);
 }
-
 .excel-card {
     border-top: 5px solid var(--excel-color);
 }
-
 .card-icon {
     font-size: 3rem;
     margin-bottom: 20px;
 }
-
 .powerpoint-card .card-icon {
     color: var(--powerpoint-color);
 }
-
 .word-card .card-icon {
     color: var(--word-color);
 }
-
 .excel-card .card-icon {
     color: var(--excel-color);
 }
-
 .project-card h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: var(--dark-color);
 }
-
 .project-card p {
     color: var(--secondary-color);
     margin-bottom: 20px;
 }
-
 .platform-badge {
     position: absolute;
     top: 10px;
@@ -187,13 +264,13 @@ body {
     font-size: 0.8rem;
     font-weight: 600;
 }
+*/
 
 /* Projektseiten */
 .project-page {
     max-width: 900px;
     margin: 0 auto;
 }
-
 .project-intro {
     background-color: white;
     border-radius: var(--border-radius);
@@ -201,27 +278,22 @@ body {
     padding: 30px;
     margin-bottom: 30px;
 }
-
 .project-intro h2 {
     color: var(--primary-color);
     margin-bottom: 20px;
     font-size: 2rem;
 }
-
 .learning-goals, .requirements {
     margin-top: 25px;
 }
-
 .learning-goals h3, .requirements h3 {
     color: var(--dark-color);
     margin-bottom: 15px;
     font-size: 1.3rem;
 }
-
 .learning-goals ul, .requirements ul {
     padding-left: 20px;
 }
-
 .learning-goals li, .requirements li {
     margin-bottom: 10px;
     position: relative;
@@ -234,7 +306,6 @@ body {
     text-align: center;
     position: relative;
 }
-
 .section-divider::before {
     content: '';
     position: absolute;
@@ -245,7 +316,6 @@ body {
     background-color: #ddd;
     z-index: 1;
 }
-
 .section-header {
     display: inline-flex;
     align-items: center;
@@ -257,12 +327,10 @@ body {
     position: relative;
     z-index: 2;
 }
-
 .section-icon {
     font-size: 1.5rem;
     color: var(--primary-color);
 }
-
 .section-description {
     margin-top: 15px;
     color: var(--secondary-color);
@@ -277,7 +345,6 @@ body {
     padding: 30px;
     margin-bottom: 30px;
 }
-
 .lesson h2 {
     color: var(--primary-color);
     margin-bottom: 15px;
@@ -286,20 +353,16 @@ body {
     align-items: center;
     gap: 10px;
 }
-
 .lesson h2::before {
     content: "📚";
     font-size: 1.5rem;
 }
-
 .toolbox-lesson h2::before {
     content: "🛠️";
 }
-
 .project-lesson h2::before {
     content: "🎯";
 }
-
 .lesson-goal {
     background-color: var(--light-color);
     border-left: 4px solid var(--primary-color);
@@ -307,7 +370,6 @@ body {
     margin-bottom: 25px;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
-
 .steps h3 {
     color: var(--dark-color);
     margin: 25px 0 15px;
@@ -316,21 +378,17 @@ body {
     align-items: center;
     gap: 10px;
 }
-
 .steps h3::before {
     content: "✅";
     font-size: 1.2rem;
 }
-
 .steps ul {
     padding-left: 30px;
     margin-bottom: 20px;
 }
-
 .steps li {
     margin-bottom: 10px;
 }
-
 .highlight-command {
     background-color: #e9ecef;
     padding: 2px 6px;
@@ -339,7 +397,6 @@ body {
     font-weight: 600;
     color: var(--dark-color);
 }
-
 .code-example {
     background-color: #f8f9fa;
     border: 1px solid #ddd;
@@ -354,11 +411,9 @@ body {
 .feedback-template {
     margin: 20px 0;
 }
-
 .copy-container {
     position: relative;
 }
-
 .copy-container pre {
     background-color: #f8f9fa;
     border: 1px solid #ddd;
@@ -370,7 +425,6 @@ body {
     max-height: 300px;
     overflow-y: auto;
 }
-
 .copy-btn {
     position: absolute;
     top: 10px;
@@ -386,7 +440,6 @@ body {
     gap: 5px;
     transition: var(--transition);
 }
-
 .copy-btn:hover {
     background-color: #3a5a9e;
 }
@@ -402,7 +455,6 @@ body {
     align-items: flex-start;
     gap: 15px;
 }
-
 .toolbox-reminder i {
     color: var(--warning-color);
     font-size: 1.5rem;
@@ -413,7 +465,6 @@ body {
 .pro-tips {
     margin-top: 40px;
 }
-
 .pro-box {
     background-color: #e7f3ff;
     border-radius: var(--border-radius);
@@ -421,27 +472,22 @@ body {
     box-shadow: var(--box-shadow);
     border-left: 5px solid var(--info-color);
 }
-
 .pro-icon {
     font-size: 2rem;
     color: var(--info-color);
     margin-bottom: 15px;
 }
-
 .pro-box h3 {
     color: var(--dark-color);
     margin-bottom: 20px;
     font-size: 1.5rem;
 }
-
 .pro-box ul {
     padding-left: 20px;
 }
-
 .pro-box li {
     margin-bottom: 15px;
 }
-
 .pro-box strong {
     color: var(--info-color);
 }
@@ -453,21 +499,18 @@ body {
     padding: 20px 0;
     margin-top: 40px;
 }
-
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
-
 .footer-links a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
     transition: var(--transition);
 }
-
 .footer-links a:hover {
     color: var(--light-color);
     text-decoration: underline;
@@ -479,7 +522,7 @@ body {
         font-size: 2rem;
     }
     
-    .project-card {
+    .course-card {
         width: 100%;
         max-width: 400px;
     }
@@ -502,6 +545,16 @@ body {
     .steps h3 {
         font-size: 1.1rem;
     }
+    
+    .platform-tabs {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .platform-tab {
+        width: 100%;
+    }
 }
 
 /* Ausklappbare Elemente */
@@ -523,27 +576,22 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-
 .collapsible:hover {
     background-color: #e2e6ea;
 }
-
 .collapsible.active {
     background-color: var(--primary-color);
     color: white;
 }
-
 .collapsible::after {
     content: '\002B';
     font-weight: bold;
     float: right;
     margin-left: 5px;
 }
-
 .collapsible.active::after {
     content: '\2212';
 }
-
 .collapsible-content {
     padding: 0 15px;
     max-height: 0;
@@ -553,7 +601,6 @@ body {
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     margin-bottom: 20px;
 }
-
 .collapsible-content.show {
     max-height: 1000px;
     transition: max-height 0.5s ease-in;
@@ -568,20 +615,17 @@ body {
     padding: 30px;
     margin-bottom: 30px;
 }
-
 .lesson-overview h2 {
     color: var(--primary-color);
     margin-bottom: 25px;
     font-size: 1.8rem;
     text-align: center;
 }
-
 .lesson-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
-
 .lesson-item {
     background-color: var(--light-color);
     border-radius: var(--border-radius);
@@ -589,22 +633,18 @@ body {
     text-align: center;
     transition: var(--transition);
 }
-
 .lesson-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--box-shadow);
 }
-
 .lesson-item a {
     text-decoration: none;
     color: var(--dark-color);
     font-weight: 600;
 }
-
 .lesson-item a:hover {
     color: var(--primary-color);
 }
-
 .lesson-item .lesson-number {
     display: block;
     font-size: 2rem;
@@ -612,12 +652,10 @@ body {
     color: var(--primary-color);
     margin-bottom: 10px;
 }
-
 .lesson-item .lesson-title {
     display: block;
     margin-bottom: 10px;
 }
-
 .lesson-item .lesson-time {
     display: block;
     font-size: 0.9rem;
@@ -629,13 +667,11 @@ body {
     margin: 40px 0;
     text-align: center;
 }
-
 .nav-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-
 .prev-lesson-btn, .next-lesson-btn {
     display: inline-flex;
     align-items: center;
@@ -648,7 +684,6 @@ body {
     font-weight: 600;
     transition: var(--transition);
 }
-
 .prev-lesson-btn:hover, .next-lesson-btn:hover {
     background-color: #3a5a9e;
     transform: translateY(-3px);
@@ -658,21 +693,18 @@ body {
 .progress-container {
     margin: 30px 0;
 }
-
 .progress-bar {
     height: 20px;
     background-color: #e9ecef;
     border-radius: 10px;
     overflow: hidden;
 }
-
 .progress {
     height: 100%;
     background-color: var(--success-color);
     border-radius: 10px;
     transition: width 0.3s ease;
 }
-
 .progress-text {
     text-align: center;
     margin-top: 10px;
@@ -684,7 +716,6 @@ body {
 .project-completion {
     margin: 40px 0;
 }
-
 .completion-box {
     background-color: #e7f5ff;
     border-radius: var(--border-radius);
@@ -693,24 +724,20 @@ body {
     box-shadow: var(--box-shadow);
     border: 2px solid var(--info-color);
 }
-
 .completion-icon {
     font-size: 3rem;
     color: var(--info-color);
     margin-bottom: 20px;
 }
-
 .completion-box h3 {
     color: var(--dark-color);
     margin-bottom: 20px;
     font-size: 1.8rem;
 }
-
 .completion-box p {
     margin-bottom: 25px;
     font-size: 1.1rem;
 }
-
 .completion-box ul {
     list-style-type: none;
     margin-bottom: 30px;
@@ -719,14 +746,12 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
 .completion-box li {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 .back-to-overview-btn {
     display: inline-flex;
     align-items: center;
@@ -739,8 +764,69 @@ body {
     font-weight: 600;
     transition: var(--transition);
 }
-
 .back-to-overview-btn:hover {
     background-color: #3a5a9e;
     transform: translateY(-3px);
+}
+
+/* Plattform-spezifische Projektcontainer */
+#desktop-projects, #online-projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Padding-Anpassungen für bessere Darstellung */
+.project-card {
+    padding: 25px;
+    width: 320px;
+}
+
+.project-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.card-icon {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.platform-badge {
+    top: 15px;
+    right: 15px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+}
+
+/* Header-Anpassungen */
+.header {
+    padding: 25px 0;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.welcome-message {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Plattform-Auswahl optimieren */
+.platform-selector {
+    margin-bottom: 35px;
+}
+
+.selector-container select {
+    padding: 8px 12px;
+    font-size: 0.95rem;
 }
