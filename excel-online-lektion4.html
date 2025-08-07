@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Online - Lektion 4</title>
+    
+    <!-- Google Fonts - Poppins für gute Lesbarkeit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Eigene CSS-Datei -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="excel-online.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Zurück zum Projekt
+        </a>
+        <h1>Excel Online - Lektion 4</h1>
+    </header>
+    
+    <!-- Hauptinhalt -->
+    <main class="main-content project-page">
+        <!-- Lektionsbeschreibung -->
+        <section class="project-intro">
+            <h2>Lektion 4: Peer-Feedback & Design (45 Min.)</h2>
+            <p class="lesson-goal"><strong>Ziel:</strong> Du testest die Funktionalität des Noten-Trackers deines Partners und gestaltest deinen eigenen Tracker übersichtlicher.</p>
+        </section>
+        
+        <!-- Fortschrittsanzeige -->
+        <section class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" style="width: 100%;"></div>
+            </div>
+            <div class="progress-text">Lektion 4 von 4</div>
+        </section>
+        
+        <!-- Lektionsinhalt -->
+        <section class="lesson project-lesson">
+            <div class="steps">
+                <h3>Schritt 1: Tracker teilen und Feedback geben 🔄</h3>
+                <p>Teile deine Excel-Datei mit dem Link (diesmal musst du <span class="highlight-command">"Bearbeiten erlauben"</span> aktivieren, damit dein Partner testen kann!).</p>
+                <p>Tausche den Link mit deinem Partner.</p>
+                <p><strong>TESTE</strong> den Tracker deines Partners! Trage eine neue Test-Note (z.B. eine 1 in Mathe) in seine Tabelle ein. Ändern sich die Durchschnittsnoten automatisch? Mache deine Änderung danach wieder rückgängig.</p>
+                <p>Schreibe eine Feedback-E-Mail.</p>
+                <p>Betreff: <span class="highlight-command">Feedback zu deinem Noten-Tracker</span></p>
+                <p>Kopiere diesen Feedback-Bogen:</p>
+                
+                <div id="feedback-container"></div>
+                
+                <h3>Schritt 2: Design-Veredelung 🎨</h3>
+                <p>Lies dein Feedback. Wenn es einen Fehler in einer Formel gab, korrigiere ihn!</p>
+                <p>Gestalte deinen Tracker schöner:</p>
+                <ul>
+                    <li>Markiere deine Überschriften und nutze die Füllfarbe (Farbeimer-Symbol), um sie dezent hervorzuheben.</li>
+                    <li>Markiere deine Tabellen und füge über das Rahmen-Symbol <span class="highlight-command">"Alle Rahmenlinien"</span> hinzu.</li>
+                </ul>
+            </div>
+            
+            <div class="toolbox-reminder">
+                <i class="fas fa-lightbulb"></i>
+                <p><strong>Tipp aus dem Werkzeugkasten:</strong> Nutze die Formatierungswerkzeuge aus dem Werkzeugkasten, um deinen Tracker übersichtlich und professionell zu gestalten!</p>
+            </div>
+        </section>
+        
+        <!-- Projektabschluss -->
+        <section class="project-completion">
+            <div class="completion-box">
+                <div class="completion-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Herzlichen Glückwunsch! 🎉</h3>
+                <p>Du hast das Projekt "Noten-Tracker" erfolgreich abgeschlossen. Du kannst jetzt:</p>
+                <ul>
+                    <li>✅ Daten in einer Tabelle klar und sinnvoll strukturieren</li>
+                    <li>✅ Grundlegende Formeln (MITTELWERT) und fortgeschrittene Formeln (MITTELWERTWENN) anwenden</li>
+                    <li>✅ Den Unterschied zwischen reinen Daten und automatischen Berechnungen verstehen</li>
+                    <li>✅ Die Funktionalität der Arbeit eines Mitschülers testen und Feedback geben</li>
+                </ul>
+                <a href="index.html" class="back-to-overview-btn">
+                    <i class="fas fa-home"></i> Zurück zur Übersicht
+                </a>
+            </div>
+        </section>
+        
+        <!-- Vorherige Lektion -->
+        <section class="lesson-navigation">
+            <div class="nav-buttons">
+                <a href="excel-online-lektion3.html" class="prev-lesson-btn">
+                    <i class="fas fa-arrow-left"></i> Vorherige Lektion
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Digitale Werkstatt | Matthias-Grünewald-Gymnasium</p>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript für Kopierfunktion -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.setAttribute('data-page-type', 'excel');
+        });
+    </script>
+</body>
+</html>
