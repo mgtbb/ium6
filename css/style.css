@@ -857,128 +857,103 @@ body {
     background-color: #3a5a9e;
     transform: translateY(-3px);
 }
-
 /* Farbliche Abgrenzung für Projektseiten */
-/* PowerPoint-Projekt */
-body[data-page-type="powerpoint"] .lesson h2 {
-    color: var(--powerpoint-flat);
+/* Gemeinsame Regeln für alle Projekttypen */
+body[data-page-type="powerpoint"] {
+    --project-color: var(--powerpoint-flat);
+    --project-hover: #A03015;
 }
-body[data-page-type="powerpoint"] .lesson-goal {
-    border-left-color: var(--powerpoint-flat);
+body[data-page-type="word"] {
+    --project-color: var(--word-flat);
+    --project-hover: #1E3F6F;
 }
-body[data-page-type="powerpoint"] .section-icon {
-    color: var(--powerpoint-flat);
-}
-body[data-page-type="powerpoint"] .collapsible.active {
-    background-color: var(--powerpoint-flat);
-}
-body[data-page-type="powerpoint"] .lesson-item .lesson-number {
-    color: var(--powerpoint-flat);
-}
-body[data-page-type="powerpoint"] .prev-lesson-btn, 
-body[data-page-type="powerpoint"] .next-lesson-btn {
-    background-color: var(--powerpoint-flat);
-}
-body[data-page-type="powerpoint"] .prev-lesson-btn:hover, 
-body[data-page-type="powerpoint"] .next-lesson-btn:hover {
-    background-color: #A03015;
-}
-body[data-page-type="powerpoint"] .back-to-overview-btn {
-    background-color: var(--powerpoint-flat);
-}
-body[data-page-type="powerpoint"] .back-to-overview-btn:hover {
-    background-color: #A03015;
+body[data-page-type="excel"] {
+    --project-color: var(--excel-flat);
+    --project-hover: #175532;
 }
 
-/* Word-Projekt */
-body[data-page-type="word"] .lesson h2 {
-    color: var(--word-flat);
-}
-body[data-page-type="word"] .lesson-goal {
-    border-left-color: var(--word-flat);
-}
-body[data-page-type="word"] .section-icon {
-    color: var(--word-flat);
-}
-body[data-page-type="word"] .collapsible.active {
-    background-color: var(--word-flat);
-}
-body[data-page-type="word"] .lesson-item .lesson-number {
-    color: var(--word-flat);
-}
-body[data-page-type="word"] .prev-lesson-btn, 
-body[data-page-type="word"] .next-lesson-btn {
-    background-color: var(--word-flat);
-}
-body[data-page-type="word"] .prev-lesson-btn:hover, 
-body[data-page-type="word"] .next-lesson-btn:hover {
-    background-color: #1E3F6F;
-}
-body[data-page-type="word"] .back-to-overview-btn {
-    background-color: var(--word-flat);
-}
-body[data-page-type="word"] .back-to-overview-btn:hover {
-    background-color: #1E3F6F;
-}
-
-/* Excel-Projekt */
-body[data-page-type="excel"] .lesson h2 {
-    color: var(--excel-flat);
-}
-body[data-page-type="excel"] .lesson-goal {
-    border-left-color: var(--excel-flat);
-}
-body[data-page-type="excel"] .section-icon {
-    color: var(--excel-flat);
-}
-body[data-page-type="excel"] .collapsible.active {
-    background-color: var(--excel-flat);
-}
-body[data-page-type="excel"] .lesson-item .lesson-number {
-    color: var(--excel-flat);
-}
-body[data-page-type="excel"] .prev-lesson-btn, 
-body[data-page-type="excel"] .next-lesson-btn {
-    background-color: var(--excel-flat);
-}
-body[data-page-type="excel"] .prev-lesson-btn:hover, 
-body[data-page-type="excel"] .next-lesson-btn:hover {
-    background-color: #175532;
-}
-body[data-page-type="excel"] .back-to-overview-btn {
-    background-color: var(--excel-flat);
-}
-body[data-page-type="excel"] .back-to-overview-btn:hover {
-    background-color: #175532;
-}
-
+/* Überschriften im Hauptinhalt */
 body[data-page-type="powerpoint"] .main-content h1,
 body[data-page-type="powerpoint"] .main-content h2,
 body[data-page-type="powerpoint"] .main-content h3,
 body[data-page-type="powerpoint"] .main-content h4,
 body[data-page-type="powerpoint"] .main-content h5,
 body[data-page-type="powerpoint"] .main-content h6,
-body[data-page-type="powerpoint"] .header {
-    color: var(--powerpoint-flat);
-}
-
 body[data-page-type="word"] .main-content h1,
 body[data-page-type="word"] .main-content h2,
 body[data-page-type="word"] .main-content h3,
 body[data-page-type="word"] .main-content h4,
 body[data-page-type="word"] .main-content h5,
 body[data-page-type="word"] .main-content h6,
-body[data-page-type="word"] .header {
-    color: var(--word-flat);
-}
-
 body[data-page-type="excel"] .main-content h1,
 body[data-page-type="excel"] .main-content h2,
 body[data-page-type="excel"] .main-content h3,
 body[data-page-type="excel"] .main-content h4,
 body[data-page-type="excel"] .main-content h5,
-body[data-page-type="excel"] .main-content h6,
-body[data-page-type="excel"] .header {
-    color: var(--excel-flat);
+body[data-page-type="excel"] .main-content h6 {
+    color: var(--project-color);
 }
-               
+
+/* Spezifische Elemente mit Projektfarbe */
+body[data-page-type="powerpoint"] .lesson h2,
+body[data-page-type="word"] .lesson h2,
+body[data-page-type="excel"] .lesson h2,
+body[data-page-type="powerpoint"] .section-icon,
+body[data-page-type="word"] .section-icon,
+body[data-page-type="excel"] .section-icon,
+body[data-page-type="powerpoint"] .lesson-item .lesson-number,
+body[data-page-type="word"] .lesson-item .lesson-number,
+body[data-page-type="excel"] .lesson-item .lesson-number {
+    color: var(--project-color);
+}
+
+/* Rahmen und Hintergründe mit Projektfarbe */
+body[data-page-type="powerpoint"] .lesson-goal,
+body[data-page-type="word"] .lesson-goal,
+body[data-page-type="excel"] .lesson-goal {
+    border-left-color: var(--project-color);
+}
+
+body[data-page-type="powerpoint"] .collapsible.active,
+body[data-page-type="word"] .collapsible.active,
+body[data-page-type="excel"] .collapsible.active {
+    background-color: var(--project-color);
+}
+
+/* Buttons mit Projektfarbe */
+body[data-page-type="powerpoint"] .prev-lesson-btn,
+body[data-page-type="powerpoint"] .next-lesson-btn,
+body[data-page-type="powerpoint"] .back-to-overview-btn,
+body[data-page-type="word"] .prev-lesson-btn,
+body[data-page-type="word"] .next-lesson-btn,
+body[data-page-type="word"] .back-to-overview-btn,
+body[data-page-type="excel"] .prev-lesson-btn,
+body[data-page-type="excel"] .next-lesson-btn,
+body[data-page-type="excel"] .back-to-overview-btn {
+    background-color: var(--project-color);
+}
+
+body[data-page-type="powerpoint"] .prev-lesson-btn:hover,
+body[data-page-type="powerpoint"] .next-lesson-btn:hover,
+body[data-page-type="powerpoint"] .back-to-overview-btn:hover,
+body[data-page-type="word"] .prev-lesson-btn:hover,
+body[data-page-type="word"] .next-lesson-btn:hover,
+body[data-page-type="word"] .back-to-overview-btn:hover,
+body[data-page-type="excel"] .prev-lesson-btn:hover,
+body[data-page-type="excel"] .next-lesson-btn:hover,
+body[data-page-type="excel"] .back-to-overview-btn:hover {
+    background-color: var(--project-hover);
+}
+
+/* Header-Hintergrund und Schriftfarbe */
+body[data-page-type="powerpoint"] .header,
+body[data-page-type="word"] .header,
+body[data-page-type="excel"] .header {
+    background-color: var(--project-color);
+}
+
+.header h1,
+.header-subtitle,
+.header .back-link {
+    color: white !important;
+}
