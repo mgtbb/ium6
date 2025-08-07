@@ -951,3 +951,34 @@ body[data-page-type="excel"] .back-to-overview-btn {
 body[data-page-type="excel"] .back-to-overview-btn:hover {
     background-color: #175532;
 }
+
+body[data-page-type="powerpoint"] .main-content h1,
+body[data-page-type="powerpoint"] .main-content h2,
+body[data-page-type="powerpoint"] .main-content h3,
+body[data-page-type="powerpoint"] .main-content h4,
+body[data-page-type="powerpoint"] .main-content h5,
+body[data-page-type="powerpoint"] .main-content h6,
+body[data-page-type="powerpoint"] .header {
+    color: var(--powerpoint-flat);
+}
+
+body[data-page-type="word"] .main-content h1,
+body[data-page-type="word"] .main-content h2,
+body[data-page-type="word"] .main-content h3,
+body[data-page-type="word"] .main-content h4,
+body[data-page-type="word"] .main-content h5,
+body[data-page-type="word"] .main-content h6,
+body[data-page-type="word"] .header {
+    color: var(--word-flat);
+}
+
+body[data-page-type="excel"] .main-content h1,
+body[data-page-type="excel"] .main-content h2,
+body[data-page-type="excel"] .main-content h3,
+body[data-page-type="excel"] .main-content h4,
+body[data-page-type="excel"] .main-content h5,
+body[data-page-type="excel"] .main-content h6,
+body[data-page-type="excel"] .header {
+    color: var(--excel-flat);
+}
+               
