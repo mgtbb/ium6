@@ -14,10 +14,11 @@
     --border-radius: 12px;
     --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
-    --gradient-primary: linear-gradient(135deg, #4a6baf 0%, #3a5a9e 100%);
-    --gradient-powerpoint: linear-gradient(135deg, #C43E1C 0%, #A03015 100%);
-    --gradient-word: linear-gradient(135deg, #2B579A 0%, #1E3F6F 100%);
-    --gradient-excel: linear-gradient(135deg, #217346 0%, #175532 100%);
+    /* Flache Farben statt Gradienten */
+    --primary-flat: #4a6baf;
+    --powerpoint-flat: #C43E1C;
+    --word-flat: #2B579A;
+    --excel-flat: #217346;
 }
 * {
     margin: 0;
@@ -28,7 +29,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(145deg, #f5f7fa 0%, #e4e8f0 100%);
+    background-color: #f5f7fa;
     min-height: 100vh;
 }
 .container {
@@ -37,10 +38,9 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-
 /* Header-Stile */
 .header {
-    background: var(--gradient-primary);
+    background-color: var(--primary-flat);
     color: white;
     padding: 40px 0;
     text-align: center;
@@ -92,7 +92,6 @@ body {
 .back-link:hover {
     transform: translateX(-5px);
 }
-
 /* Hauptinhalt */
 .main-content {
     padding: 50px 0;
@@ -107,7 +106,6 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
 /* Plattform-Auswahl - NEU GESTALTET */
 .platform-selector {
     display: flex;
@@ -134,7 +132,7 @@ body {
     position: relative;
 }
 .platform-tab.active {
-    background-color: var(--primary-color);
+    background-color: var(--primary-flat);
     color: white;
 }
 .platform-tab.active::after {
@@ -149,7 +147,6 @@ body {
 .platform-tab:hover:not(.active) {
     background-color: var(--light-color);
 }
-
 /* Kursmodule - NEU GESTALTET */
 .courses-container {
     display: flex;
@@ -163,17 +160,18 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 0;
-    width: 350px;
+    width: 320px;
     text-align: center;
     transition: var(--transition);
     display: flex;
     flex-direction: column;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 10px;
 }
 .course-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 .course-header {
     padding: 30px 30px 20px;
@@ -192,18 +190,17 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 .tier-expert-course .course-icon {
-    background: var(--gradient-powerpoint);
+    background-color: var(--powerpoint-flat);
     color: white;
 }
 .handout-expert-course .course-icon {
-    background: var(--gradient-word);
+    background-color: var(--word-flat);
     color: white;
 }
 .excel-course .course-icon {
-    background: var(--gradient-excel);
+    background-color: var(--excel-flat);
     color: white;
 }
-
 .course-card h2 {
     font-size: 1.8rem;
     margin-bottom: 15px;
@@ -235,7 +232,7 @@ body {
     border-radius: 20px;
 }
 .lesson-count i {
-    color: var(--primary-color);
+    color: var(--primary-flat);
 }
 .course-body {
     padding: 0 30px 30px;
@@ -243,7 +240,7 @@ body {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 .start-course-btn {
-    background: var(--gradient-primary);
+    background-color: var(--primary-flat);
     color: white;
     border: none;
     border-radius: 30px;
@@ -257,14 +254,31 @@ body {
     justify-content: center;
     gap: 10px;
     width: 100%;
-    box-shadow: 0 5px 15px rgba(74, 107, 175, 0.3);
+    box-shadow: none;
 }
 .start-course-btn:hover {
+    background-color: #3a5a9e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(74, 107, 175, 0.4);
 }
 .start-course-btn i {
     font-size: 1.2rem;
+}
+
+/* Animation für Plattformwechsel */
+.platform-courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(0);
+}
+
+.platform-courses.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 /* Alte Projektkarten - Auskommentiert */
@@ -842,4 +856,98 @@ body {
 .back-to-overview-btn:hover {
     background-color: #3a5a9e;
     transform: translateY(-3px);
+}
+
+/* Farbliche Abgrenzung für Projektseiten */
+/* PowerPoint-Projekt */
+body[data-page-type="powerpoint"] .lesson h2 {
+    color: var(--powerpoint-flat);
+}
+body[data-page-type="powerpoint"] .lesson-goal {
+    border-left-color: var(--powerpoint-flat);
+}
+body[data-page-type="powerpoint"] .section-icon {
+    color: var(--powerpoint-flat);
+}
+body[data-page-type="powerpoint"] .collapsible.active {
+    background-color: var(--powerpoint-flat);
+}
+body[data-page-type="powerpoint"] .lesson-item .lesson-number {
+    color: var(--powerpoint-flat);
+}
+body[data-page-type="powerpoint"] .prev-lesson-btn, 
+body[data-page-type="powerpoint"] .next-lesson-btn {
+    background-color: var(--powerpoint-flat);
+}
+body[data-page-type="powerpoint"] .prev-lesson-btn:hover, 
+body[data-page-type="powerpoint"] .next-lesson-btn:hover {
+    background-color: #A03015;
+}
+body[data-page-type="powerpoint"] .back-to-overview-btn {
+    background-color: var(--powerpoint-flat);
+}
+body[data-page-type="powerpoint"] .back-to-overview-btn:hover {
+    background-color: #A03015;
+}
+
+/* Word-Projekt */
+body[data-page-type="word"] .lesson h2 {
+    color: var(--word-flat);
+}
+body[data-page-type="word"] .lesson-goal {
+    border-left-color: var(--word-flat);
+}
+body[data-page-type="word"] .section-icon {
+    color: var(--word-flat);
+}
+body[data-page-type="word"] .collapsible.active {
+    background-color: var(--word-flat);
+}
+body[data-page-type="word"] .lesson-item .lesson-number {
+    color: var(--word-flat);
+}
+body[data-page-type="word"] .prev-lesson-btn, 
+body[data-page-type="word"] .next-lesson-btn {
+    background-color: var(--word-flat);
+}
+body[data-page-type="word"] .prev-lesson-btn:hover, 
+body[data-page-type="word"] .next-lesson-btn:hover {
+    background-color: #1E3F6F;
+}
+body[data-page-type="word"] .back-to-overview-btn {
+    background-color: var(--word-flat);
+}
+body[data-page-type="word"] .back-to-overview-btn:hover {
+    background-color: #1E3F6F;
+}
+
+/* Excel-Projekt */
+body[data-page-type="excel"] .lesson h2 {
+    color: var(--excel-flat);
+}
+body[data-page-type="excel"] .lesson-goal {
+    border-left-color: var(--excel-flat);
+}
+body[data-page-type="excel"] .section-icon {
+    color: var(--excel-flat);
+}
+body[data-page-type="excel"] .collapsible.active {
+    background-color: var(--excel-flat);
+}
+body[data-page-type="excel"] .lesson-item .lesson-number {
+    color: var(--excel-flat);
+}
+body[data-page-type="excel"] .prev-lesson-btn, 
+body[data-page-type="excel"] .next-lesson-btn {
+    background-color: var(--excel-flat);
+}
+body[data-page-type="excel"] .prev-lesson-btn:hover, 
+body[data-page-type="excel"] .next-lesson-btn:hover {
+    background-color: #175532;
+}
+body[data-page-type="excel"] .back-to-overview-btn {
+    background-color: var(--excel-flat);
+}
+body[data-page-type="excel"] .back-to-overview-btn:hover {
+    background-color: #175532;
 }
