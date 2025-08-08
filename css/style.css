@@ -147,7 +147,8 @@ body {
 .platform-tab:hover:not(.active) {
     background-color: var(--light-color);
 }
-/* Kursmodule - NEU GESTALTET */
+
+/* Kursmodule - ÜBERARBEITET für aligned Buttons */
 .courses-container {
     display: flex;
     flex-wrap: wrap;
@@ -155,54 +156,64 @@ body {
     gap: 40px;
     margin-top: 30px;
 }
-.course-card {
-    background: white;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    border: 1px solid #e8e8e8;
 
+.course-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 0;
+    width: 320px;
+    text-align: center;
+    transition: var(--transition);
     display: flex;
     flex-direction: column;
-    height: 100%;
-    min-height: 380px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 10px;
+    /* WICHTIG: Mindesthöhe für alle Karten */
+    min-height: 450px;
 }
+
 .course-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
+
 .course-header {
-    flex-grow: 1;
+    padding: 30px 30px 20px;
+    position: relative;
+    /* WICHTIG: Flexbox für gleichmäßige Verteilung */
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
+
 .course-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+
 .tier-expert-course .course-icon {
     background-color: var(--powerpoint-flat);
     color: white;
 }
+
 .handout-expert-course .course-icon {
     background-color: var(--word-flat);
     color: white;
 }
+
 .excel-course .course-icon {
     background-color: var(--excel-flat);
     color: white;
-}
-
-.course-card:hover .course-icon {
-    transform: scale(1.05);
 }
 
 .course-card h2 {
@@ -211,22 +222,28 @@ body {
     color: var(--dark-color);
     font-weight: 700;
 }
+
 .course-description {
     color: var(--secondary-color);
+    margin-bottom: 20px;
+    /* WICHTIG: flex-grow entfernt, stattdessen feste Mindesthöhe */
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1; /* Nimmt verfügbaren Platz ein */
+    min-height: 60px; /* Sorgt für gleichmäßige Höhe der Beschreibungen */
 }
+
 .course-meta {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 25px;
     color: var(--secondary-color);
     font-size: 0.95rem;
+    /* WICHTIG: margin-top: auto schiebt die Meta-Infos nach unten */
+    margin-top: auto;
 }
+
 .lesson-count {
     display: flex;
     align-items: center;
@@ -235,39 +252,42 @@ body {
     padding: 8px 15px;
     border-radius: 20px;
 }
+
 .lesson-count i {
     color: var(--primary-flat);
 }
+
 .course-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: stretch;
-    margin-top: auto; /* Schiebt den Button nach unten */
+    padding: 20px 30px 30px;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    /* WICHTIG: margin-top entfernt, da course-header jetzt flex-grow hat */
 }
+
 .start-course-btn {
     background-color: var(--primary-flat);
     color: white;
     border: none;
-    width: 100%;
-    min-width: 200px;
+    border-radius: 30px;
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 14px 24px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    width: 100%;
+    box-shadow: none;
 }
+
 .start-course-btn:hover {
     background-color: #3a5a9e;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-3px);
 }
+
 .start-course-btn i {
     font-size: 1.2rem;
 }
@@ -281,7 +301,7 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease, transform 0.5s ease;
     transform: translateY(0);
-    align-items: stretch; /* alle Karten gleich hoch */
+    align-items: stretch; /* WICHTIG: alle Karten gleich hoch */
 }
 
 .platform-courses.fade-out {
