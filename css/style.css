@@ -238,6 +238,7 @@ body {
     padding: 0 30px 30px;
     background-color: rgba(0, 0, 0, 0.02);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: auto;
 }
 .start-course-btn {
     background-color: var(--primary-flat);
@@ -274,6 +275,7 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease, transform 0.5s ease;
     transform: translateY(0);
+    align-items: stretch; /* alle Karten gleich hoch */
 }
 
 .platform-courses.fade-out {
@@ -609,6 +611,8 @@ body {
     .course-card {
         width: 100%;
         max-width: 400px;
+        display: flex;
+        flex-direction: column;
     }
     
     .footer-content {
